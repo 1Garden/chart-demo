@@ -1,40 +1,25 @@
 import { useRef, useState, useEffect } from 'react';
 import * as echarts from 'echarts';
+import 'echarts-wordcloud';
 
-const option = {
-  legend: {},
-  tooltip: {},
-  dataset: {
-    source: [
-      ['product', '1月', '2月', '3月', '4月', '5月', '6月'],
-      ['Actual', 120, 132, 101, '-', '-', '-', '-'],
-      ['Budget', 120, 178, 70, 134, 90, 230, 210],
-    ],
-  },
-  xAxis: { type: 'category' },
-  yAxis: {},
-  series: [
-    { type: 'bar', seriesLayoutBy: 'row' },
-    { type: 'bar', seriesLayoutBy: 'row' },
-  ],
-};
-
-const Chart = () => {
+const Chart = (v) => {
+  let { option } = v;
+  // console.log(option);
   const [load, setLoad] = useState(false);
-  const [chartOption, setChartOption] = useState({});
+  const [chartOption, setChartOption] = useState(option);
   const chartRef = useRef(null);
   const [echartsInstance, setEchartsInstance] = useState();
 
-  useEffect(() => {
-    const getData = async () => {
-      // const data = await DataProcessor().then((data) => {
-      //   console.log(data);
-      //   return data;
-      // });
-      setChartOption(option);
-    };
-    getData();
-  }, []);
+  // useEffect((option) => {
+  //   const getData = async () => {
+  //     // const data = await DataProcessor().then((data) => {
+  //     //   console.log(data);
+  //     //   return data;
+  //     // });
+  //     setChartOption(option);
+  //   };
+  //   getData();
+  // }, []);
 
   useEffect(() => {
     let chart = echarts.getInstanceByDom(chartRef.current);
@@ -56,7 +41,7 @@ const Chart = () => {
 
   return (
     <>
-      <div ref={chartRef} style={{ width: '100%', height: 300 }}></div>
+      <div ref={chartRef} style={{ width: '100%', height: '230%' }}></div>
     </>
   );
 };

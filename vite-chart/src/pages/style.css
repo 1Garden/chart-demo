@@ -1,0 +1,13 @@
+#main {
+  margin: 2vh;
+}
+
+.row {
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+.chartCard > .ant-card-body {
+  padding: 10px;
+}
+
