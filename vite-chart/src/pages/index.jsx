@@ -5,6 +5,9 @@ import Chart from '../components/Chart';
 import './style.css';
 import * as echarts from 'echarts';
 import 'echarts-wordcloud';
+import { Typography } from 'antd';
+
+const { Title } = Typography;
 
 const dataSource = [
   {
@@ -132,7 +135,7 @@ const columns = [
 
 let wordCloudOption = {
   title: {
-    text: '高频风险项',
+    text: '高频风险项词云',
     left: '2%',
     textStyle: {
       fontSize: 15,
@@ -851,7 +854,7 @@ wordCloudOption.series[0].data = JsonList;
 
 const cardStyle = { width: '97%', height: '34.8vh' };
 
-const option = {
+const barOption = {
   title: {
     text: '风险按合同类型区分',
     left: '2%',
@@ -860,29 +863,43 @@ const option = {
     },
     top: '1%',
   },
+  color: ['#ee7959', '#108b96', '#b7d332', '#a6559d', '#9b8ea9'],
+  tooltip: {
+    trigger: 'axis',
+    axisPointer: {
+      // 坐标轴指示器，坐标轴触发有效
+      type: 'shadow', // 默认为直线，可选为：'line' | 'shadow'
+    },
+  },
   grid: {
-    left: '3%',
+    left: '4%',
     right: '4%',
     bottom: '3%',
     containLabel: true,
   },
-  legend: {},
-  tooltip: {},
-  dataset: {
-    source: [
-      ['product', '1月', '2月', '3月', '4月', '5月', '6月'],
-      ['Actual', 120, 132, 101, '-', '-', '-', '-'],
-      ['Budget', 120, 178, 70, 134, 90, 230, 210],
-    ],
-  },
-  xAxis: { type: 'category' },
-  yAxis: {},
+  xAxis: [
+    {
+      type: 'category',
+      data: ['工程类', '农业类', '技术类', '科研类', 'A类', 'B类'],
+      axisTick: {
+        alignWithLabel: true,
+      },
+    },
+  ],
+  yAxis: [
+    {
+      name: '金额（万元）',
+      type: 'value',
+    },
+  ],
   series: [
     {
+      name: '合同金额合计',
       type: 'bar',
-      seriesLayoutBy: 'row',
+      barWidth: '60%',
+      data: [5, 10, 15, 15, 20, 35],
+      color: ['#ee7959', '#108b96', '#b7d332', '#a6559d', '#9b8ea9'],
     },
-    { type: 'bar', seriesLayoutBy: 'row' },
   ],
 };
 
@@ -976,15 +993,22 @@ function Main() {
           </Card>
         </Col>
         <Col span={6} className="col">
-          <Card
-            size="small"
-            title="风险规则项"
-            extra={<a href="#">More</a>}
-            style={{ width: '22.5vw' }}
-          >
-            <p>RMB xxx 万元</p>
-            <p>同比 环比 </p>
-            <p>风险合同</p>
+          <Card size="small" style={{ width: '22.5vw' }}>
+            <h4 style={{ marginTop: '5px', marginBottom: '5px' }}>
+              本月签约总额
+            </h4>
+            <h2>￥ 759,198.31</h2>
+            <span>
+              同比
+              <i>
+                4.2%<b id="triangle-down"></b>
+              </i>
+              环比
+              <i>
+                2.1%<b id="triangle-up"></b>
+              </i>
+            </span>
+            <h4 style={{ marginBottom: '5px' }}>本年签约总额：￥21,312</h4>
           </Card>
         </Col>
         <Col span={6}>
@@ -1007,7 +1031,7 @@ function Main() {
             className="chartCard"
             style={{ ...cardStyle, marginBottom: '15px', padding: '1px' }}
           >
-            <Chart option={option} style={{ padding: '10px' }} />
+            <Chart option={barOption} style={{ padding: '10px' }} />
           </Card>
           <Card
             className="chartCard"
@@ -1023,9 +1047,13 @@ function Main() {
             pagination={false}
             bordered
             size="small"
-            title={() => '重点风险合同'}
+            title={() => (
+              <Title level={5} style={{ marginTop: '10px' }}>
+                重点风险合同
+              </Title>
+            )}
             scroll={{
-              y: '61vh',
+              y: '57vh',
             }}
             style={{
               width: '46.5vw',
