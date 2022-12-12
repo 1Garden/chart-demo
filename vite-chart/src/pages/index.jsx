@@ -1,6 +1,10 @@
 import React from 'react';
-import { Col, Row, Card, Table, Statistic } from 'antd';
-import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons';
+import { Col, Row, Card, Table, Statistic, Divider } from 'antd';
+import {
+  ArrowDownOutlined,
+  ArrowUpOutlined,
+  PieChartOutlined,
+} from '@ant-design/icons';
 import Chart from '../components/Chart';
 import './style.css';
 import * as echarts from 'echarts';
@@ -907,120 +911,95 @@ function Main() {
   return (
     <div id="main">
       <Row className="row">
-        <Col span={6} className="col">
-          <Card
-            size="small"
-            title="风险合同金额（收入类）"
-            extra={<a href="#">More</a>}
-            style={{ width: '22.5vw' }}
-          >
-            <Col span={24} style={{ marginBottom: '10px' }}>
-              <Statistic
-                title=""
-                value={112893}
-                suffix={<div class="ant-statistic-title">（万元）</div>}
-              />
-            </Col>
-            <Row gutter={16} style={{ marginBottom: '10px' }}>
-              <Col span={12}>
+        <Col span={8} className="col">
+          <Card size="small" style={{ width: '25vw' }}>
+            <Row>
+              <Col span={16}>
+                <h4 style={{ marginTop: '5px', marginBottom: '5px' }}>
+                  风险合同金额（支出类）
+                </h4>
                 <Statistic
-                  title="同比"
-                  value={11.28}
-                  precision={2}
-                  valueStyle={{
-                    color: '#3f8600',
-                  }}
-                  prefix={<ArrowUpOutlined />}
-                  suffix="%"
+                  title=""
+                  value={112893}
+                  suffix={<div class="ant-statistic-title">（万元）</div>}
                 />
+                <span>
+                  同比&nbsp;
+                  <i>
+                    4.2%<b id="triangle-down"></b>
+                  </i>
+                  环比&nbsp;
+                  <i>
+                    2.1%<b id="triangle-up"></b>
+                  </i>
+                </span>
               </Col>
-              <Col span={12}>
-                <Statistic
-                  title="环比"
-                  value={11.28}
-                  precision={2}
-                  valueStyle={{
-                    color: 'red',
+              <Col span={7}>
+                <PieChartOutlined
+                  style={{
+                    fontSize: '50px',
+                    marginTop: '20px',
+                    marginLeft: '20px',
                   }}
-                  prefix={<ArrowDownOutlined />}
-                  suffix="%"
                 />
               </Col>
             </Row>
-          </Card>
-        </Col>
-        {/**<p>风险合同数量</p>*/}
-        <Col span={6} className="col">
-          <Card
-            size="small"
-            title="风险合同金额（支出类）"
-            extra={<a href="#">More</a>}
-            style={{ width: '22.5vw' }}
-          >
-            <Col span={24} style={{ marginBottom: '10px' }}>
-              <Statistic
-                title=""
-                value={60897}
-                suffix={<div class="ant-statistic-title">（万元）</div>}
-              />
-            </Col>
-            <Row gutter={16} style={{ marginBottom: '10px' }}>
-              <Col span={12}>
-                <Statistic
-                  title="同比"
-                  value={1.54}
-                  precision={2}
-                  valueStyle={{
-                    color: '#3f8600',
-                  }}
-                  prefix={<ArrowUpOutlined />}
-                  suffix="%"
-                />
-              </Col>
-              <Col span={12}>
-                <Statistic
-                  title="环比"
-                  value={8.19}
-                  precision={2}
-                  valueStyle={{
-                    color: 'red',
-                  }}
-                  prefix={<ArrowDownOutlined />}
-                  suffix="%"
-                />
-              </Col>
-            </Row>
-          </Card>
-        </Col>
-        <Col span={6} className="col">
-          <Card size="small" style={{ width: '22.5vw' }}>
-            <h4 style={{ marginTop: '5px', marginBottom: '5px' }}>
-              本月签约总额
+            <Divider style={{ margin: '10px 0' }} />
+            <h4 style={{ marginTop: '0', marginBottom: '0' }}>
+              风险合同数量：100
             </h4>
-            <h2>￥ 759,198.31</h2>
+          </Card>
+        </Col>
+        <Col span={8} className="col">
+          <Card size="small" style={{ width: '28vw' }}>
+            <h4 style={{ marginTop: '5px', marginBottom: '5px' }}>
+              风险合同金额（收入类）
+            </h4>
+            <Statistic
+              title=""
+              value={112893}
+              suffix={<div class="ant-statistic-title">（万元）</div>}
+            />
             <span>
-              同比
+              同比&nbsp;
               <i>
                 4.2%<b id="triangle-down"></b>
               </i>
-              环比
+              环比&nbsp;
               <i>
                 2.1%<b id="triangle-up"></b>
               </i>
             </span>
-            <h4 style={{ marginBottom: '5px' }}>本年签约总额：￥21,312</h4>
+            <Divider style={{ margin: '10px 0' }} />
+            <h4 style={{ marginTop: '0', marginBottom: '0' }}>
+              风险合同数量：100
+            </h4>
           </Card>
         </Col>
-        <Col span={6}>
-          <Card
-            size="small"
-            title="风险合同金额"
-            extra={<a href="#">More</a>}
-            style={{ width: '22.5vw' }}
-          >
-            <p>RMB xxx 万元</p>
-            <p>同比 环比 </p>
-            <p>风险合同</p>
+        <Col span={8} className="col">
+          <Card size="small" style={{ width: '28vw' }}>
+            <h4 style={{ marginTop: '5px', marginBottom: '5px' }}>
+              风险规则项
+            </h4>
+            <Statistic
+              title=""
+              value={112893}
+              suffix={<div class="ant-statistic-title">（个）</div>}
+            />
+            <span>
+              同比&nbsp;
+              <i>
+                4.2%<b id="triangle-down"></b>
+              </i>
+              环比&nbsp;
+              <i>
+                2.1%<b id="triangle-up"></b>
+              </i>
+            </span>
+            <Divider style={{ margin: '10px 0' }} />
+            <h4 style={{ marginTop: '0', marginBottom: '0' }}>
+              埋点：100 &nbsp;&nbsp;&nbsp; 清单：200
+            </h4>
           </Card>
         </Col>
       </Row>
