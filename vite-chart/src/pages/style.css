@@ -21,6 +21,7 @@
   margin: 0 20px 0 5px;
   border-radius: 5px;
 }
+
 #triangle-down {
   width: 0;
   height: 0;
@@ -32,3 +33,6 @@
   border-radius: 5px;
 }
 
+.miniFont {
+  font-size: 12px;
+}
