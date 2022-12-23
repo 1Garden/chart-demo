@@ -386,7 +386,7 @@ function Main() {
               >
                 （个）
               </div>
-              &nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;
                清单：12
               <div
                 className="ant-statistic-title"
