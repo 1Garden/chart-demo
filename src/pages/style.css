@@ -1,0 +1,131 @@
+#main {
+  margin: 0;
+}
+
+#page {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
+
+.page_fgszb_h2 {
+    margin: 20px 2% 10px;
+    width: 96%;
+    font-size: 16px;
+    color: #333;
+    display: inline-block;
+}
+
+#now {
+    margin-left: 15px;
+    font-size: 12px;
+    color: #999;
+    font-weight: normal;
+    vertical-align: bottom;
+}
+
+.card-row {
+  width: 100%;
+  margin: 20px 2%;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+}
+
+.card {
+  margin-right: 1%;
+  float: left;
+  padding: 13px;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: block;
+}
+
+h5 {
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  font-size: 24px;
+  margin: 5px 0;
+  padding: 2px 0;
+  font-weight: normal;
+}
+
+h4 {
+  font-size: 14px;
+  font-weight: normal;
+  color: #666;
+  border-top: 1px solid #eee;
+  padding: 10px 0 5px;
+  margin: 0;
+}
+
+i {
+  font-style: normal;
+  margin-left: 10px;
+}
+
+.row {
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+.card-col {
+  display: inline-block;
+}
+
+.statistic {
+  margin: 8px 0;
+}
+
+.compared-statistic {
+  margin: 0;
+  font-size: 14px;
+  font-weight: normal;
+  color: #666;
+  padding: 0 0 6px;
+  display: block;
+}
+
+.chartCard > .ant-card-body {
+  padding: 10px;
+}
+
+#triangle-up {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 8px solid red;
+  display: inline-block;
+  margin: 0 20px 0 5px;
+  border-radius: 5px;
+}
+
+#triangle-down {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid #14ae67;
+  display: inline-block;
+  margin: 0 20px 0 5px;
+  border-radius: 5px;
+}
+
+.miniFont {
+  font-size: 12px;
+}
+
+#table {
+  width: 92%;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
