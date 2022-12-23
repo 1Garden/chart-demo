@@ -5,6 +5,12 @@ import processNum from '../utils/processNum'
 import './style.css';
 import 'echarts-wordcloud';
 
+const date = new Date();
+const year = date.getFullYear();
+const day = date.getDate();
+const month = date.getMonth() + 1;
+
+
 const dataSource = [
   {
     key: '1',
@@ -289,7 +295,7 @@ function Main() {
     <div id="main">
       <div id="page">
         <h2 className="page_fgszb_h2">
-          合同风险报表 <span id="now">更新时间：2022-12-23</span>
+          合同风险报表 <span id="now">更新时间：{year}-{month}-{day}</span>
         </h2>
         <div className="card-row">
           <div className="card" style={{ width: '30%' }}>
